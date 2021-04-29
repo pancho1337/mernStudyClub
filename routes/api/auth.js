@@ -23,7 +23,7 @@ router.post('/', [
     check('password', 'give me a password').exists()
 ], 
 async (req, res) => {
-    console.log("post users body ===> ",req.body)
+    console.log("post auth to get tocken ===> ",req.body)
     const errors = validationResult(req)
     if(!errors.isEmpty()){
         return res.status(400).json({errors: errors.array()})
@@ -39,7 +39,7 @@ async (req, res) => {
         if(!isMatch){
             return res
                 .status(400)
-                .json({ errors: [{ msg: "Invalid Creds"}] })
+                .json({ errors: [{ msg: "Invalid Creds" }] })
         }
         // return jsonwebtoken 
         const payload = {
@@ -49,7 +49,7 @@ async (req, res) => {
         }
         jwt.sign(payload, 
             config.get("jwtToken"),
-            { expiresIn: 3600},
+            { expiresIn: 3600 },
             (err, token) => {
                 if(err) throw err
                 console.log('user saved to the db')

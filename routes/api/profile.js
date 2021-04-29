@@ -135,8 +135,8 @@ router.delete('/', auth, async (req, res) => {
 })
 
 router.put('/experience', 
-    [  
-        auth, [
+    [auth, 
+        [
             check('title', 'Title is required')
                 .not()
                 .isEmpty(),
