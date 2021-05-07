@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Navbar from './components/layouts/navbar'
 import Landing from './components/layouts/landing'
+import Alert from './components/layouts/alert'
 
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
@@ -19,6 +20,7 @@ const App = () =>
       <Navbar />
       <Route exact path="/" component={ Landing } />
       <section className='container'>
+        <Alert />
         <Switch>
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
