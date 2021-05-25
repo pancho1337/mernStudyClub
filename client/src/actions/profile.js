@@ -28,6 +28,14 @@ export const getCurrentProfile = () => async dispatch => {
     }
 }
 
+export const getProfiles = () => async dispatch => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
+
 export const createProfile = ( formData, history, edit = false ) => async dispatch => {
     try {
         const config = {
